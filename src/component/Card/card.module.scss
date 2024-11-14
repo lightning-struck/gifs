@@ -1,0 +1,112 @@
+.card {
+	width: 100%;
+	border: 1px solid #3d444db3;
+	&:hover {
+		.card_image_item {
+			transform: scale(1.05);
+		}
+	}
+	&_image {
+		position: relative;
+		overflow: hidden;
+		height: 244px;
+		&_skeleton {
+			height: 244px;
+			animation-duration: 1.5s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: infinite;
+			animation-name: placeHolderShimmer;
+			animation-timing-function: linear;
+
+			background: #f6f7f8;
+			background-image: -webkit-gradient(
+				linear,
+				left center,
+				right center,
+				from(#f6f7f8),
+				color-stop(0.2, #edeef1),
+				color-stop(0.4, #f6f7f8),
+				to(#f6f7f8)
+			);
+			background-image: -webkit-linear-gradient(
+				left,
+				#f6f7f8 0%,
+				#edeef1 20%,
+				#f6f7f8 40%,
+				#f6f7f8 100%
+			);
+			background-size: 980px 898px;
+			position: relative;
+		}
+		&_item {
+			transition: ease 0.5s;
+			width: 100%;
+			height: 100%;
+			image-rendering: pixelated;
+			object-fit: contain;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+	overflow: hidden;
+	border-radius: 16px;
+	.title {
+		color: rgb(240, 240, 240);
+		font-size: 20px;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	.description {
+		color: #9198a1;
+		margin: 0;
+		-webkit-line-clamp: 3;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	&_bottom {
+		height: 100%;
+		padding: 20px 19px;
+		background-color: #151b23;
+	}
+}
+@keyframes placeHolderShimmer {
+	0% {
+		background-position: -490px 0;
+	}
+	100% {
+		background-position: 490px 0;
+	}
+}
+.skeleton_line {
+	display: inline-block;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeHolderShimmer;
+	animation-timing-function: linear;
+
+	background: #f6f7f8;
+	background-image: -webkit-gradient(
+		linear,
+		left center,
+		right center,
+		from(#f6f7f8),
+		color-stop(0.2, #edeef1),
+		color-stop(0.4, #f6f7f8),
+		to(#f6f7f8)
+	);
+	background-image: -webkit-linear-gradient(
+		left,
+		#f6f7f8 0%,
+		#edeef1 20%,
+		#d1d1d1 40%,
+		#f6f7f8 100%
+	);
+	border-radius: 6px;
+	background-size: 980px 898px;
+	height: 19px;
+	width: 100%;
+	position: relative;
+}
